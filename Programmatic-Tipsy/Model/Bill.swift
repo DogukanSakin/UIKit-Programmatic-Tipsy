@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct Bill{
+    var total:Double
+    var tip:Double
+    var split:Int
+}

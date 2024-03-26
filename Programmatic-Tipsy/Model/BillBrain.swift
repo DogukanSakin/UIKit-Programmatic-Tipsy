@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct BillBrain{
+    func calculateAmountPerPerson(_ bill:Bill)->Double{
+        return (bill.total + (bill.total * bill.tip)) / Double(bill.split)
+    }
+}

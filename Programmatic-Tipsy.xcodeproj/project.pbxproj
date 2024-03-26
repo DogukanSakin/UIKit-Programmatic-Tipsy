@@ -18,6 +18,10 @@
 		440899D22BAF2C7E00D6A9FB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440899D12BAF2C7E00D6A9FB /* CustomButton.swift */; };
 		440899D42BAF317C00D6A9FB /* CustomStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440899D32BAF317C00D6A9FB /* CustomStepper.swift */; };
 		440899D62BAF31DB00D6A9FB /* CustomHorizontalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440899D52BAF31DB00D6A9FB /* CustomHorizontalContainer.swift */; };
+		4497B6B42BB34274005143CC /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497B6B32BB34274005143CC /* ResultViewController.swift */; };
+		4497B6B62BB342A7005143CC /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497B6B52BB342A7005143CC /* ResultView.swift */; };
+		4497B6B82BB347D6005143CC /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497B6B72BB347D6005143CC /* Bill.swift */; };
+		4497B6BA2BB34E85005143CC /* BillBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4497B6B92BB34E84005143CC /* BillBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		440899D12BAF2C7E00D6A9FB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		440899D32BAF317C00D6A9FB /* CustomStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepper.swift; sourceTree = "<group>"; };
 		440899D52BAF31DB00D6A9FB /* CustomHorizontalContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHorizontalContainer.swift; sourceTree = "<group>"; };
+		4497B6B32BB34274005143CC /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		4497B6B52BB342A7005143CC /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		4497B6B72BB347D6005143CC /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		4497B6B92BB34E84005143CC /* BillBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,8 @@
 		440899C52BAF1FD600D6A9FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4497B6B72BB347D6005143CC /* Bill.swift */,
+				4497B6B92BB34E84005143CC /* BillBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				440899CA2BAF205500D6A9FB /* CalculateView.swift */,
+				4497B6B52BB342A7005143CC /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				440899C82BAF202400D6A9FB /* CalculateViewController.swift */,
+				4497B6B32BB34274005143CC /* ResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,10 +198,14 @@
 			files = (
 				440899B22BAF1D3A00D6A9FB /* AppDelegate.swift in Sources */,
 				440899CE2BAF22C400D6A9FB /* CustomLabel.swift in Sources */,
+				4497B6B62BB342A7005143CC /* ResultView.swift in Sources */,
 				440899B42BAF1D3A00D6A9FB /* SceneDelegate.swift in Sources */,
+				4497B6B82BB347D6005143CC /* Bill.swift in Sources */,
 				440899C92BAF202400D6A9FB /* CalculateViewController.swift in Sources */,
 				440899D42BAF317C00D6A9FB /* CustomStepper.swift in Sources */,
+				4497B6B42BB34274005143CC /* ResultViewController.swift in Sources */,
 				440899D22BAF2C7E00D6A9FB /* CustomButton.swift in Sources */,
+				4497B6BA2BB34E85005143CC /* BillBrain.swift in Sources */,
 				440899D62BAF31DB00D6A9FB /* CustomHorizontalContainer.swift in Sources */,
 				440899CB2BAF205500D6A9FB /* CalculateView.swift in Sources */,
 				440899D02BAF254200D6A9FB /* CustomInput.swift in Sources */,

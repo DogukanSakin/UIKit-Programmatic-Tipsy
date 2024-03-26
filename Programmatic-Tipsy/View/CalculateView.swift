@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol CalculateViewDelegate:AnyObject{
+    func didTapPercentageButton(_ sender:CustomButton)
+    func didTapCalculateButton(_ sender:CustomButton)
+    func didChangeStepperValue(_ sender:CustomStepper)
+}
+
 class CalculateView:UIView{
+    weak var delegate:CalculateViewDelegate?
+    
     let PADDING = 20.0
     
     // MARK: - Custom Components
@@ -20,8 +28,9 @@ class CalculateView:UIView{
     let selectTipUpperPlaceHolder = CustomLabel(text:"Select tip")
     let percentageButtonContainer = CustomHorizontalContainer()
     let zeroPercentage = CustomButton(title: "0%")
-    let tenPercentage = CustomButton(title: "10%")
-    let twentyPercentage = CustomButton(title: "20%")
+    let tenPercentage = CustomButton(title: "10%",type:.textOnly)
+    let twentyPercentage = CustomButton(title: "20%",type:.textOnly)
+
     
     // Split Stepper
     let chooseSplitUpperPlaceHolder = CustomLabel(text:"Choose split")
@@ -60,10 +69,18 @@ class CalculateView:UIView{
         percentageButtonContainer.addArrangedSubview(twentyPercentage)
         
         // Split Stepper Container
-        
         splitContainer.addArrangedSubview(splitLabel)
         splitContainer.addArrangedSubview(splitStepper)
         splitLabel.textAlignment = .center
+        
+        // Buttons Actions
+        zeroPercentage.action = percentageButtonTapped
+        tenPercentage.action = percentageButtonTapped
+        twentyPercentage.action = percentageButtonTapped
+        splitStepper.action = stepperValueChanged
+        calculateButton.action = calculateButtonTapped
+        
+        
         
         NSLayoutConstraint.activate([
             // Bill input
@@ -97,7 +114,7 @@ class CalculateView:UIView{
             splitContainer.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor,constant: PADDING),
             splitContainer.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor,constant: -PADDING),
             
-            calculateButton.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor, constant: 20),
+            calculateButton.bottomAnchor.constraint(equalTo: self.layoutMarginsGuide.bottomAnchor, constant: -20),
             calculateButton.leadingAnchor.constraint(equalTo: self.layoutMarginsGuide.leadingAnchor,constant: PADDING),
             calculateButton.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor,constant: -PADDING),
             
@@ -112,6 +129,23 @@ class CalculateView:UIView{
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private func percentageButtonTapped(_ sender:CustomButton){
+        zeroPercentage.isSelected = false
+        tenPercentage.isSelected = false
+        twentyPercentage.isSelected = false
+        sender.isSelected = true
+     
+        delegate?.didTapPercentageButton(sender)
+    }
+    
+    private func calculateButtonTapped(_ sender:CustomButton){
+        delegate?.didTapCalculateButton(sender)
+    }
+    
+    private func stepperValueChanged(_ sender:CustomStepper){
+        delegate?.didChangeStepperValue(sender)
+    }
     
 
 
